@@ -10,14 +10,14 @@ CREATE SCHEMA shoppingmall;
 -- 개
 CREATE TABLE shoppingmall.Dog (
 	id        INT          NOT NULL COMMENT '아이디', -- 아이디
-	kind      VARCHAR(20)  NOT NULL COMMENT '개종류', -- 개종류
+	kind      VARCHAR(20)  NOT NULL UNIQUE COMMENT '개종류', -- 개종류
 	price     INT          NOT NULL COMMENT '가격', -- 가격
 	image     VARCHAR(20)  NOT NULL COMMENT '개이미지', -- 개이미지
 	country   VARCHAR(20)  NOT NULL COMMENT '원산지', -- 원산지
 	height    INT          NULL     COMMENT '개신장', -- 개신장
 	weight    INT          NULL     COMMENT '개체중', -- 개체중
 	content   VARCHAR(400) NULL     COMMENT '개설명', -- 개설명
-	readcount INT          NULL     COMMENT '조회수' -- 조회수
+	readcount INT          NULL     default 0 COMMENT '조회수' -- 조회수
 )
 COMMENT '개';
 
